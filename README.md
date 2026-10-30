@@ -6,10 +6,10 @@ An open source vulnerability/remediation tracker made with Python using Django.
 
 ## Requirements
 
-Python 3.14.8
-asgiref 3.13.0
-Django 6.1.2
-sqlparse 0.6.0
+- Python 3.14.8
+- asgiref 3.13.0
+- Django 6.1.2
+- sqlparse 0.6.0
 
 ## Getting Started
 
