@@ -1,0 +1,39 @@
+# vulntrack/compose-dev.yaml
+# web and database compose
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vulntrack-dev
+    ports:
+    - "80:8000"
+#    depends_on:
+#      db:
+#       condition: service_healthy #to-do: add db health check
+
+  db: #to-do: add health check
+    image: postgres:18-alpine
+    container_name: postgres-dev
+    restart: always
+    # set shared memory limit when using docker compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: vulntrack_db
+      POSTGRES_USER: vulntrack_admin
+      POSTGRES_PASSWORD: safepass
+    ports:
+      - "5432-5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
