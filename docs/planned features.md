@@ -7,7 +7,7 @@
 - Remove vuln db
 - Add vuln entry
 - Edit Vuln entry
-- Remove vuln entry
+- "Remove" vuln entry
 - Containerized deployment
 - GitHub Actions (CI/CD)
 
