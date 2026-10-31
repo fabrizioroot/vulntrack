@@ -52,7 +52,7 @@ class VulnForm(forms.ModelForm):
         fields = [
             'vuln_name', 
             'vuln_description', 
-            'vuln_known_cases', 
+            'vuln_known_causes', 
             'vuln_score', 
             'vuln_known_fixes', 
             'vuln_solved_status'
