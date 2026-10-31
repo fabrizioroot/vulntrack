@@ -40,7 +40,7 @@ class Vulnerability(models.Model):
 	)
 	vuln_name = models.CharField(max_length=30, blank=False)
 	vuln_description = models.TextField()
-	vuln_known_cases = models.TextField()
+	vuln_known_causes = models.TextField()
 	vuln_score = models.FloatField(
 		blank=False, 
 		default=1.0, 
