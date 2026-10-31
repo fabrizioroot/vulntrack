@@ -16,6 +16,20 @@
    limitations under the License.
 """
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from .forms import VulnForm
+from .models import Vulnerability
 
-# Create your views here.
+def vuln_list(request):
+    vulns= Vulnerability.objects.all()
+
+    if request.method == 'POST':
+        form = VulnForm(request.POST) # handle form submissions
+        if form.is_valid():
+            form.save()
+            return redirect('vulnerabilities') # redirect to avoid duplicate submissions
+    else:
+        form = VulnForm()
+    
+    # pass vuln and the form to the template
+    return render(request, 'vulnerabilities.html', {'vulns' : vulns, 'form' : form})
