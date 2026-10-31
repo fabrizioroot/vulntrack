@@ -29,20 +29,20 @@ services:
 #      db:
 #       condition: service_healthy #to-do: add db health check
 
-  db: #to-do: add health check
-    image: postgres:18-alpine
-    container_name: postgres-dev
-    restart: always
-    # set shared memory limit when using docker compose
-    shm_size: 128mb
-    environment:
-      POSTGRES_DB: vulntrack_db
-      POSTGRES_USER: vulntrack_admin
-      POSTGRES_PASSWORD: safepass
-    ports:
-      - "5432-5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+#  db: #to-do: add health check
+#    image: postgres:18-alpine
+#    container_name: postgres-dev
+#    restart: always
+#    # set shared memory limit when using docker compose
+#    shm_size: 128mb
+#    environment:
+#      POSTGRES_DB: vulntrack_db
+#      POSTGRES_USER: vulntrack_admin
+#      POSTGRES_PASSWORD: safepass
+#    ports:
+#      - "5432-5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
 
   adminer:
     image: adminer
