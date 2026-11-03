@@ -27,6 +27,8 @@ services:
     - "80:8000"
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
+    env_file:
+      - .env
 #    depends_on:
 #      db:
 #       condition: service_healthy #to-do: add db health check
