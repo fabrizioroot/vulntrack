@@ -15,6 +15,15 @@ An open source vulnerability/remediation tracker made with Python using Django.
 
 To run the developer build:
 
+First, generate the credentials manually or using the generate-env.sh utility:
+
+```bash
+$ chmod +x generate-env.sh
+$ ./generate-env.sh
+```
+
+Then run the container:
+
 ```bash
 $ docker compose -f compose-dev.yaml up --build
 ```
